@@ -1,0 +1,14 @@
+miner_db_mode = { Live = 0 }
+miner_api_port = 3000
+
+[[mempool_nodes]]
+# testnet
+address = "34.65.95.17:8116"
+# mainnet
+# address = "34.65.95.17:8333"
+
+[[miner_nodes]]
+address = "127.0.0.1:12360"
+
+[[user_nodes]]
+address = "127.0.0.1:12350"

@@ -1,0 +1,11 @@
+user_db_mode = { Live = 0 }
+user_api_port = 3001
+
+[[mempool_nodes]]
+# testnet
+address = "34.65.95.17:9116"
+# mainnet
+# address = "34.65.95.17:9333"
+
+[[user_nodes]]
+address = "127.0.0.1:12350"

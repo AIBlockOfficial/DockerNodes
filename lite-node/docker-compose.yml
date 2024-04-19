@@ -1,0 +1,15 @@
+version: '3'
+services:
+  user-0:
+    image: ghcr.io/aiblockofficial/node-user:latest
+    ports:
+    - '12350:12350'
+    - '3001:3001'
+    volumes:  
+    - /tmp/wallet:/src
+    - ./node_settings_user.toml:/etc/node_settings.toml
+    command: user
+    environment:
+    - RUST_LOG = info,debug
+    ### uncomment for Linux
+    # user: "${UID}:${GID}"
