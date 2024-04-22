@@ -6,9 +6,9 @@ user_api_port = 3001
 
 [[mempool_nodes]]
 # testnet
-address = "34.65.95.17:9116"
+# address = "34.65.95.17:9116"
 # mainnet
-# address = "34.65.95.17:9333"
+address = "34.65.95.17:9333"
 
 [[miner_nodes]]
 address = "172.28.0.4:12340"

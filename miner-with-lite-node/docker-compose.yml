@@ -18,7 +18,7 @@ services:
       aiblock:
         ipv4_address: 172.28.0.3
     ## Uncomment the following line if running Linux
-    ## user: "${UID}:${GID}"
+    user: "${UID}:${GID}"
   user-0:
     image: ghcr.io/aiblockofficial/node-user:latest
     ports:
@@ -34,7 +34,7 @@ services:
       aiblock:
         ipv4_address: 172.28.0.4
     ## Uncomment the following line if running Linux
-    ## user: "${UID}:${GID}"
+    user: "${UID}:${GID}"
 networks:
   aiblock:
     driver: bridge
