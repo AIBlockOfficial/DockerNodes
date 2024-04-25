@@ -1,17 +1,17 @@
 miner_db_mode = { Live = 0 }
 miner_api_port = 3000
 
-user_db_mode = { Live = 1000 }
+user_db_mode = { Live = 0 }
 user_api_port = 3001
 
 [[mempool_nodes]]
 # testnet
-address = "34.65.95.17:9116"
+# address = "34.65.95.17:9116"
 # mainnet
-# address = "34.65.95.17:9333"
+address = "34.65.95.17:8333"
 
 [[miner_nodes]]
-address = "172.28.0.4:12340"
+address = "127.0.0.1:12341"
 
 [[user_nodes]]
-address = "172.28.0.5:12350"
+address = "127.0.0.1:12351"

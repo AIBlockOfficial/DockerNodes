@@ -1,43 +1,18 @@
 version: '3'
 services:
   miner-0:
-    image: ghcr.io/aiblockofficial/node-miner:latest
-    depends_on: 
-    - user-0
+    image: ghcr.io/aiblockofficial/node-miner:sha-1c5898f
     ports:
-    - '12340:12340'
+    - '12341:12341'
+    - '12351:12351'
     - '3000:3000'
+    - '3001:3001'
     volumes:  
     - ./ai_block/miner:/src
     - ./node_settings.toml:/etc/node_settings.toml
     command: miner
     environment:
-    - RUST_LOG = info,debug
-    - WITH_USER_ADDRESS = 0
-    networks:
-      aiblock:
-        ipv4_address: 172.28.0.3
+    - RUST_LOG=info,debug
+    - WITH_USER_INDEX=0
     ## Uncomment the following line if running Linux
-    ## user: "${UID}:${GID}"
-  user-0:
-    image: ghcr.io/aiblockofficial/node-user:latest
-    ports:
-    - '12350:12350'
-    - '3001:3001'
-    volumes:  
-    - ./ai_block/user:/src
-    - ./node_settings.toml:/etc/node_settings.toml
-    command: user
-    environment:
-    - RUST_LOG = info,debug
-    networks:
-      aiblock:
-        ipv4_address: 172.28.0.4
-    ## Uncomment the following line if running Linux
-    ## user: "${UID}:${GID}"
-networks:
-  aiblock:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.28.0.0/24
+    user: "${UID}:${GID}"
