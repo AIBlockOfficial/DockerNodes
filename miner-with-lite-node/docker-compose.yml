@@ -14,5 +14,6 @@ services:
     environment:
     - RUST_LOG=info,debug
     - WITH_USER_INDEX=0
+    - ADDRESS_AGGREGATION_LIMIT=999
     ## Uncomment the following line if running Linux
     user: "${UID}:${GID}"
