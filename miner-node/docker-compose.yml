@@ -10,8 +10,9 @@ services:
     - ./node_settings_miner.toml:/etc/node_settings.toml
     command: miner
     environment:
-    - WITH_USER_ADDRESS = "127.0.0.1:12350"
-    - RUST_LOG = info,debug
+    - WITH_USER_ADDRESS="127.0.0.1:12350"
+    - RUST_LOG=info,debug
+    - ADDRESS_AGGREGATION_LIMIT=999
     ### uncomment for Linux
     user: "${UID}:${GID}"
   user-0:

@@ -4,6 +4,8 @@ miner_api_port = 3000
 user_db_mode = { Live = 0 }
 user_api_port = 3001
 
+address_aggregation_limit = 999
+
 [[mempool_nodes]]
 # testnet
 # address = "34.65.95.17:9116"
