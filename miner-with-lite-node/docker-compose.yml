@@ -1,7 +1,7 @@
 version: '3'
 services:
   miner-0:
-    image: ghcr.io/aiblockofficial/node-miner:sha-1c5898f
+    image: ghcr.io/aiblockofficial/node-miner:latest
     ports:
     - '12341:12341'
     - '12351:12351'
