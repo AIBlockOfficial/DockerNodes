@@ -6,8 +6,8 @@ services:
     - '12350:12350'
     - '3001:3001'
     volumes:  
-    - /tmp/wallet:/src
-    - ./node_settings_user.toml:/etc/node_settings.toml
+    - /tmp/user-0:/src
+    - ./node_settings.toml:/etc/node_settings.toml
     command: user
     environment:
     - RUST_LOG = info,debug

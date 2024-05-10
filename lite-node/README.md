@@ -2,6 +2,7 @@
 
 > Running docker on your machine will get you up and running quickly but should not be considered production level.
 > This requires a lot more orchestration that is not in scope of this document.
+> This doc is still under development!
 
 There are docker images available at:
 * `ghcr.io/aiblockofficial/network/node-user:latest`
@@ -18,9 +19,9 @@ AIBlock nodes use a `node_settings.toml` file for configuration.
 This is located in `/etc/node_settings.toml` and has to be mounted as the container starts.
 
 The sample settings file for a lite node can be found here:
-* [user](node_settings_user.toml) 
+* [user](node_settings.toml) 
 
-They are currently referencing `testnet`
+They are currently referencing `testnet`.
 
 ### Running docker directly
 
@@ -29,14 +30,12 @@ docker run -d -p --name aiblock-user 3000:3000 \
 -v /tmp/user:/src \
 -v ./node_settings_user.toml:/etc/node_settings_user.toml \
 -e ADDRESS="127.0.0.1:12340" \
--e WITH_USER_ADDRESS="127.0.0.1:12350" \
-ghcr.io/aiblockofficial/network/node-miner:latest user
+ghcr.io/aiblockofficial/node-user:latest user
 ```
 
-* `-p 3000:3000` sets ports used for the miner's REST API.
+* `-p 3000:3000` sets ports used for the lite node's REST API.
 * `-v /tmp/wallet:/src` mounts your local filesystem so the miner's wallet may be persisted.
 * `-e ADDRESS` sets the ip:port of the node. If more than one node will be running from the same IP address, the port number has to be different for each node. 
-* `-e WITH_USER_ADDRESS` also starts a user node with a wallet to hold the tokens.
 
 You might also need to run with `--user` on some Linux systems for mounting permission purposes.
 

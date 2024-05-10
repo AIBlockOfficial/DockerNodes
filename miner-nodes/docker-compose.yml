@@ -1,0 +1,32 @@
+version: '3'
+services:
+  miner-0:
+    image: ghcr.io/aiblockofficial/node-miner:latest
+    ports:
+    # - '12340:12340'
+    # - '12350:12350'
+    - '3000:3000'
+    volumes:  
+    - /tmp/miner-0:/src
+    - ./node_settings_miner_0.toml:/etc/node_settings.toml
+    command: miner
+    environment:
+    - WITH_USER_INDEX=0
+    - RUST_LOG=info,debug
+    ### uncomment for Linux
+    #user: "${UID}:${GID}"
+  miner-1:
+    image: ghcr.io/aiblockofficial/node-miner:latest
+    ports:
+    # - '12341:12341'
+    # - '12351:12351'
+    - '3001:3001'
+    volumes:
+    - /tmp/miner-1:/src
+    - ./node_settings_miner_1.toml:/etc/node_settings.toml
+    command: miner
+    environment:
+    - WITH_USER_INDEX=0
+    - RUST_LOG=info,debug
+    ### uncomment for Linux
+    #user: "${UID}:${GID}"
