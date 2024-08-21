@@ -1,0 +1,15 @@
+miner_db_mode = { Test = 0 }
+miner_api_port = 3000
+
+user_db_mode = { Test = 0 }
+user_api_port = 3000
+
+#first node is leader
+[[mempool_nodes]]
+address = "http://mempool-node-0:12300"
+
+[[miner_nodes]]
+address = "http://127.0.0.1:12384"
+
+[[user_nodes]]
+address = "http://127.0.0.1:12394"
